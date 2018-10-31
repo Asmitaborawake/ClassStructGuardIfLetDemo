@@ -81,3 +81,32 @@ triplingNumner(number: optionalNumber) // here we pass nil value to function bcz
 
 triplingNumner(number: optionalNumber1) // here we pass value to that function it check the value is optional or nil if not it exicute remain block of that function
 
+
+//Filter, map 
+
+
+struct Device{
+    var type: String
+    var price: Float
+    var color: String
+}
+
+var mymacpro = Device(type: "iMac Pro", price: 155.65, color: "red")
+var myiPhone6Pluse = Device(type: "iPhone", price: 2234.76, color: "gray")
+var myiPhone7 = Device(type: "iPhone", price: 2345.67, color: "black")
+var myiPad = Device(type: "iPad", price: 2345.67, color: "yellow")
+
+let myDevice = [mymacpro,myiPhone6Pluse,myiPhone7,myiPad]
+
+//Filter : using filter we can get specifice type data from our array here we fetch iPhone type data from device array
+let iphone = myDevice.filter({ return $0.type == "iPhone"})
+print(iphone)
+
+//map : using map u can update data of array , add, update , multiply that data
+let canedianPrice : [Float] = myDevice.map({ return $0.price * 1.3})
+print(canedianPrice)
+//in this e.g. we multiplay price by 1.3
+
+
+
+
